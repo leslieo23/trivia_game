@@ -1,0 +1,16 @@
+body{background-image:url("/Users/Leslie/trivia_game/assets/images/breakingbad.jpg");
+background-size:cover;}
+#title{text-align:center;
+color:white;
+font-size:50px;}
+#trivia{text-align:center;
+opacity:1;
+}
+footer{text-align:center;
+margin-top:300px;}
+#background{background-color:green;
+opacity: .5;}
+#time-left{
+	color:black;
+float:right;
+}

@@ -1,0 +1,56 @@
+<!Doctype>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/Users/Leslie/trivia_game/assets/css/trivia_game.css">
+	<link rel-"stylesheet" type="text/css" href="/Users/Leslie/trivia_game/assets/css/reset.css">
+
+</head>
+<body>
+<h2 id="time-left"></h2></br>
+<h1 id="title">Breaking Bad </h1></br>
+<div id=background>
+<h2 id="trivia">Question 1</h2>
+</div>
+
+
+
+</body>
+<footer> Leslie Obour (c) 2016 Rutgers Coding Bootcamp</footer>
+<script type="text/javascript"src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script type="text/javascript"> 
+var winCount=0;
+var lossCount=0;
+var questions=[{
+	'answer':'c'
+	'question':'What is Walter White\'s nick name?'
+	'choices':['Walt','WW','Heisenberg','Pollo']
+
+},
+{'answer':'c'
+'question':'What does Hank collect in his spare time?'}]
+	
+
+				
+
+var number=16;
+function run(){
+	counter= setInterval(increment,1000);
+}
+function increment(){
+	number--
+	document.getElementById('time-left').innerHTML=('<h2>'+number+'</h2>')
+	if(number ===0){
+			clearInterval(counter)
+		document.getElementById('time-left').innerHTML=('<h2>'+'time is up!'+'</h2>')	
+	}
+}
+run();
+//setTimeout(fifteenSeconds,3000)
+//function fifteenSeconds(){
+//	alert("time-up!")
+//	document.getElementById('#time-left').innerHTML=fifteenSeconds;
+//	}
+  
+
+</script>
+</html>
