@@ -1,16 +1,29 @@
 body{background-image:url("/Users/Leslie/trivia_game/assets/images/breakingbad.jpg");
-background-size:cover;}
-#title{text-align:center;
+background-size:cover;
+position:;
+background-attachment: fixed;
+overflow:scroll;
+background-repeat: repeat-y}
+#background{
+	overflow:scroll;
+background-color:#24B6DA;
+opacity:.4;}
+#title{text-align:center;}
+#submit{background-color:#24B6DA;
+border:1px solid gray;
+width:200px;
+margin-left:400px;}
+#submit:hover{background-color:#3d91b8;
 color:white;
-font-size:50px;}
-#trivia{text-align:center;
-opacity:1;
-}
-footer{text-align:center;
-margin-top:300px;}
-#background{background-color:green;
-opacity: .5;}
+width:200px;}
+#trivia{
+	overflow:auto;
+overflow-y:scroll;
+text-align: center}
+.answers{text-align:center;}
 #time-left{
-	color:black;
-float:right;
+	float:right;
+	margin-bottom:200px;
 }
+#category1, #category2, #category3, #category4{display:none;}
+footer{text-align:center;}

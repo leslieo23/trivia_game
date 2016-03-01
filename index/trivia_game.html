@@ -4,35 +4,112 @@
 	<link rel="stylesheet" type="text/css" href="/Users/Leslie/trivia_game/assets/css/trivia_game.css">
 	<link rel-"stylesheet" type="text/css" href="/Users/Leslie/trivia_game/assets/css/reset.css">
 
+<meta http-equiv="refresh" content="62;url=/Users/Leslie/trivia_game/index/trivia_results.html"/>
 </head>
 <body>
-<h2 id="time-left"></h2></br>
-<h1 id="title">Breaking Bad </h1></br>
-<div id=background>
-<h2 id="trivia">Question 1</h2>
+<h1 id="title">Breaking Bad Trivia!</h1><span><h2 id="time-left"></h2></span>
+
+<div id="background">
+<h3 id="trivia"></br>What is Walter White's nickname?</h3>
+
+<ul class="answers">
+<input type="radio" name="q1" value="a" id="q1a"><label for="q1a">Walt</label><br/>
+<input type="radio" name="q1" value="b" id="q1b"><label for="q1b">WW</label><br/>
+<input type="radio" name="q1" value="c" id="q1c"><label for="q1c">Heisenberg</label><br/>
+<input type="radio" name="q1" value="d" id="q1d"><label for="q1d">Blue</label><br/>
+</ul>
+
+<h2 id="trivia"></br>What does Hank collect as a hobby?</h2>
+
+<ul class="answers">
+<input type="radio" name="q2" value="a" id="q2a"><label for="q2a">Rocks</label><br/>
+<input type="radio" name="q2" value="b" id="q2b"><label for="q2b">Minerals</label><br/>
+<input type="radio" name="q2" value="c" id="q2c"><label for="q2c">Books</label><br/>
+<input type="radio" name="q2" value="d" id="q2d"><label for="q2d">Baldy</label><br/>
+</ul>
+
+<h2 id="trivia"></br>What was Walt's first car?</h2>
+<ul class="answers">
+<input type="radio" name="q3" value="a" id="q3a"><label for="q3a">Pontiac Aztek</label><br/>
+<input type="radio" name="q3" value="b" id="q3b"><label for="q3b">Toyota Higlander</label><br/>
+<input type="radio" name="q3" value="c" id="q3c"><label for="q3c">Honda Pilot</label><br/>
+<input type="radio" name="q3" value="d" id="q3d"><label for="q3d">Nissan Murano</label><br/>
+</ul>
+<h2 id="trivia"></br>What company did Walt have a small share of before he sold it?</h2>
+<ul class="answers">
+<input type="radio" name="q4" value="a" id="q4a"><label for="q4a">Blue labs</label><br/>
+<input type="radio" name="q4" value="b" id="q4b"><label for="q4b">Crossroads</label><br/>
+<input type="radio" name="q4" value="c" id="q4c"><label for="q4c">Gray Matter</label><br/>
+<input type="radio" name="q4" value="d" id="q4d"><label for="q4d">RV Tech</label><br/>
+</ul>
+
 </div>
-
-
-
+<br/>
 </body>
+<form action="#submit">
+<button input type="button" id="submit">Finished!</button>
 <footer> Leslie Obour (c) 2016 Rutgers Coding Bootcamp</footer>
 <script type="text/javascript"src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 <script type="text/javascript"> 
 var winCount=0;
 var lossCount=0;
-var questions=[{
-	'answer':'c'
-	'question':'What is Walter White\'s nick name?'
-	'choices':['Walt','WW','Heisenberg','Pollo']
+var questionIndex=[];
+run();
+window.onload=function(){
+	questionIndex="What is Walter White's nickname?"
+	document.getElementById('trivia').innerHTML=('<h2>'+questionIndex+'</h2>')
+	document.getElementById('answers').innerHTML=('<h2>'+questionIndex+'</h2>')
 
-},
-{'answer':'c'
-'question':'What does Hank collect in his spare time?'}]
-	
+}
+$(document).ready(function() 
+{    $("#results").click(function() {                
 
-				
+if (!$("input[@name=q1]:checked").val() ||            
+!$("input[@name=q2]:checked").val() ||            
+!$("input[@name=q3]:checked").val() ||            
+!$("input[@name=q4]:checked").val()            
+           
+) {            
+alert("You're not done yet!");        
+}  
+else {            
+var cat1name = "1";            
+var cat2name = "2";            
+var cat3name = "3";            
+var cat4name = "4";            
+          
+            
 
-var number=16;
+var cat1 = ($("input[@name=q1]:checked").val() != "c"); 
+           
+var cat2 = ($("input[@name=q2]:checked").val() != "b");  
+
+var cat3 = ($("input[@name=q3]:checked").val() != "a");  
+
+var cat4 = ($("input[@name=q4]:checked").val() != "c");  
+
+ 
+
+var cat11 = (!cat1 && !cat2 && !cat3 && !cat4); var categories = [];                        
+
+if (cat1) { categories.push(cat1name) };            
+if (cat2) { categories.push(cat2name) };            
+if (cat3) { categories.push(cat3name) };            
+if (cat4) { categories.push(cat4name) };            
+                       
+
+var catStr = 'You answered the following questions incorrectly: ' + categories.join(', ') + '';                     
+$("#categorylist").text(catStr);                        
+$("#categorylist").show("slow");            
+
+if (cat1) { $("#category1").show("slow"); };            
+if (cat2) { $("#category2").show("slow"); };            
+if (cat3) { $("#category3").show("slow"); };            
+if (cat4) { $("#category4").show("slow"); };            
+{ $("#closing").show("slow"); };
+}
+    });});
+var number=61;
 function run(){
 	counter= setInterval(increment,1000);
 }
@@ -44,12 +121,8 @@ function increment(){
 		document.getElementById('time-left').innerHTML=('<h2>'+'time is up!'+'</h2>')	
 	}
 }
-run();
-//setTimeout(fifteenSeconds,3000)
-//function fifteenSeconds(){
-//	alert("time-up!")
-//	document.getElementById('#time-left').innerHTML=fifteenSeconds;
-//	}
+
+
   
 
 </script>
