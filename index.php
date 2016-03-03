@@ -1,0 +1,1 @@
+<?php include_once("/Users/Leslie/trivia_game/index/trivia_results.html");?>
