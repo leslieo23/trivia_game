@@ -4,26 +4,35 @@ position:;
 background-attachment: fixed;
 overflow:scroll;
 background-repeat: repeat-y}
+
 #background{
 	overflow:scroll;
 background-color:#24B6DA;
 opacity:.4;}
-#title{text-align:center;}
+
+#title{text-align:center;
+color:white;}
+
 #submit{background-color:#24B6DA;
 border:1px solid gray;
 width:200px;
 margin-left:400px;}
+
 #submit:hover{background-color:#3d91b8;
 color:white;
 width:200px;}
+
 #trivia{
 	overflow:auto;
 overflow-y:scroll;
 text-align: center}
+
 .answers{text-align:center;}
+
 #time-left{
 	float:right;
 	margin-bottom:200px;
 }
+
 #category1, #category2, #category3, #category4{display:none;}
 footer{text-align:center;}
